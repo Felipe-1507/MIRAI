@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIRAI — Brand Guidelines · Kaji Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',sans-serif;background:#fff;color:#060203;overflow-x:hidden;cursor:none}
+
+/* CURSOR */
+.cur{position:fixed;width:8px;height:8px;background:#c41c1c;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s}
+.cring{position:fixed;width:30px;height:30px;border:1px solid rgba(196,28,28,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s}
+.cring.big{width:48px;height:48px}
+@media(max-width:600px){.cur,.cring{display:none}body{cursor:auto}}
+
+/* PROGRESS */
+#prog{position:fixed;top:0;left:0;height:2px;background:#c41c1c;z-index:200;transition:width .08s}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 3rem;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference}
+.nav-logo{font-weight:700;font-size:.85rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;text-decoration:none}
+.nav-right{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:rgba(255,255,255,.5);letter-spacing:.12em;text-transform:uppercase}
+
+/* PAGES — cada seção é uma "página" do brandbook */
+.page{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 3rem 5rem;position:relative;overflow:hidden}
+.page-num{position:absolute;font-family:'JetBrains Mono',monospace;font-size:18vw;font-weight:700;color:rgba(0,0,0,.04);line-height:1;right:-2rem;bottom:-3rem;pointer-events:none;user-select:none;letter-spacing:-.04em}
+.page-num-light{color:rgba(255,255,255,.04)}
+.page-tag{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.5rem;opacity:.45}
+
+/* ── 00 COVER ── */
+#cover{background:#060203;color:#f5f0f8;min-height:100vh;justify-content:space-between;padding:3rem}
+.cover-top{display:flex;justify-content:space-between;align-items:flex-start}
+.cover-logo-text{font-weight:700;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;opacity:.5}
+.cover-kanji{font-family:'Space Grotesk',sans-serif;font-size:.8rem;letter-spacing:.12em;opacity:.3}
+.cover-main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:4rem 0}
+.cover-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;opacity:.4;margin-bottom:1.5rem}
+.cover-title{font-size:clamp(4rem,12vw,11rem);font-weight:700;line-height:.88;letter-spacing:-.06em;margin-bottom:0}
+.cover-title .red{color:#c41c1c}
+.cover-subtitle{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;opacity:.35;margin-top:2rem}
+.cover-bottom{display:flex;justify-content:space-between;align-items:flex-end}
+.cover-bottom-left{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.1em;opacity:.35;line-height:1.8}
+.cover-year{font-size:4rem;font-weight:700;letter-spacing:-.06em;opacity:.12;line-height:1}
+
+/* ── 01 INTRO ── */
+#intro{background:#fff}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:end;min-height:70vh}
+.intro-left{}
+.intro-heading{font-size:clamp(2.5rem,6vw,5.5rem);font-weight:700;line-height:.95;letter-spacing:-.05em;margin-bottom:2rem}
+.intro-heading em{color:#c41c1c;font-style:normal}
+.intro-body{font-size:1.05rem;color:#444;line-height:1.85;max-width:420px}
+.intro-body p{margin-bottom:1.25rem}
+.intro-body strong{color:#060203;font-weight:600}
+.intro-right{display:flex;flex-direction:column;gap:1px;background:#e8e8e8}
+.intro-stat{background:#fff;padding:1.75rem 2rem;transition:background .2s}
+.intro-stat:hover{background:#f8f8f8}
+.intro-stat-num{font-size:2.8rem;font-weight:700;letter-spacing:-.06em;line-height:1;color:#c41c1c;margin-bottom:.25rem}
+.intro-stat-label{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#999}
+
+/* ── 02 LOGO ── */
+#logo-section{background:#060203;color:#f5f0f8}
+.logo-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:70vh;align-items:center}
+.logo-left{border-right:1px solid rgba(255,255,255,.08);padding-right:4rem;display:flex;flex-direction:column;justify-content:center}
+.logo-display{margin-bottom:3rem}
+.logo-mark{margin-bottom:2rem}
+/* SVG Logo MIRAI */
+.logo-svg-wrap{display:flex;align-items:center;gap:1.25rem;margin-bottom:2.5rem}
+.logo-hex{width:64px;height:64px;flex-shrink:0}
+.logo-wordmark{font-size:2.2rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.logo-tagline{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;opacity:.35;margin-top:.4rem}
+/* Variations */
+.logo-variations{display:flex;flex-direction:column;gap:1.5rem}
+.logo-var-label{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;opacity:.3;margin-bottom:.75rem}
+.logo-var-row{display:flex;gap:1.5rem;align-items:center}
+/* Dark version */
+.logo-var-dark{background:#060203;padding:1.5rem 2rem;border:1px solid rgba(255,255,255,.08);border-radius:4px;display:flex;align-items:center;gap:.875rem;flex:1}
+/* Light version */
+.logo-var-light{background:#fff;padding:1.5rem 2rem;border-radius:4px;display:flex;align-items:center;gap:.875rem;flex:1}
+.logo-var-light .logo-wordmark{color:#060203}
+/* Red version */
+.logo-var-red{background:#c41c1c;padding:1.5rem 2rem;border-radius:4px;display:flex;align-items:center;gap:.875rem;flex:1}
+.logo-right{padding-left:4rem}
+.logo-right-title{font-size:clamp(1.5rem,4vw,3rem);font-weight:700;letter-spacing:-.04em;margin-bottom:1.5rem}
+.logo-rule{display:flex;gap:1.25rem;margin-bottom:1.25rem;align-items:flex-start}
+.logo-rule-dot{width:6px;height:6px;background:#c41c1c;border-radius:50%;flex-shrink:0;margin-top:.45rem}
+.logo-rule-text{font-size:.88rem;color:rgba(245,240,248,.55);line-height:1.65}
+/* Safe space diagram */
+.safe-space{margin-top:2.5rem;border:1px dashed rgba(255,255,255,.12);border-radius:4px;padding:2.5rem;display:flex;align-items:center;justify-content:center;position:relative}
+.safe-space-label{position:absolute;font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+.safe-space-label.top{top:.75rem;left:50%;transform:translateX(-50%)}
+.safe-space-label.bottom{bottom:.75rem;left:50%;transform:translateX(-50%)}
+.safe-space-label.left{left:.75rem;top:50%;transform:translateY(-50%) rotate(-90deg)}
+.safe-space-label.right{right:.75rem;top:50%;transform:translateY(-50%) rotate(90deg)}
+
+/* ── 03 COR ── */
+#colors{background:#fff}
+.color-hero{margin-bottom:4rem}
+.color-hero-swatches{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:4px;overflow:hidden;height:240px;margin-bottom:1px}
+.swatch-primary{background:#c41c1c;padding:2rem;display:flex;flex-direction:column;justify-content:space-between}
+.swatch-dark{background:#060203;padding:2rem;display:flex;flex-direction:column;justify-content:space-between}
+.swatch-white{background:#fff;padding:2rem;display:flex;flex-direction:column;justify-content:space-between;border-right:none}
+.swatch-name{font-weight:700;font-size:1.1rem;letter-spacing:.02em}
+.swatch-hex{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.08em;opacity:.65;margin-top:.25rem}
+.swatch-role{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;opacity:.5}
+.color-secondaries{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:4px;overflow:hidden;height:120px}
+.swatch-sm{padding:1.25rem 1.5rem;display:flex;flex-direction:column;justify-content:space-between}
+.swatch-sm .swatch-name{font-size:.85rem}
+.swatch-sm .swatch-hex{font-size:.62rem}
+.color-usage{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3rem}
+.color-usage-item{}
+.color-usage-title{font-weight:600;font-size:.85rem;margin-bottom:.5rem;letter-spacing:.02em}
+.color-usage-desc{font-size:.8rem;color:#666;line-height:1.6}
+.color-do-dont{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+.do-card{border:1px solid #e8e8e8;border-radius:4px;overflow:hidden}
+.do-card-preview{height:80px;display:flex;align-items:center;justify-content:center}
+.do-card-label{padding:.5rem .875rem;font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:.4rem}
+.do-label{color:#2d7a2d}
+.dont-label{color:#c41c1c}
+
+/* ── 04 TIPOGRAFIA ── */
+#typography{background:#060203;color:#f5f0f8}
+.type-hero{margin-bottom:3rem}
+.type-specimen{font-size:clamp(4rem,14vw,13rem);font-weight:700;line-height:.88;letter-spacing:-.06em;color:#f5f0f8;margin-bottom:.5rem}
+.type-specimen-name{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;opacity:.3}
+.type-weights{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);margin:3rem 0}
+.type-weight{background:#060203;padding:1.5rem 1.75rem}
+.type-weight-sample{font-size:1.75rem;margin-bottom:.5rem;line-height:1}
+.type-weight-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;opacity:.3}
+.type-hierarchy{display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(255,255,255,.06)}
+.type-level{display:grid;grid-template-columns:100px 1fr 1fr;align-items:center;gap:2rem;padding:1.5rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.type-level-tag{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;opacity:.3}
+.type-level-spec{font-family:'JetBrains Mono',monospace;font-size:.62rem;opacity:.25;line-height:1.6}
+.type-level-mono{font-family:'JetBrains Mono',monospace}
+
+/* ── 05 VOZ ── */
+#voice{background:#fff}
+.voice-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;min-height:70vh;align-items:center}
+.voice-left{}
+.voice-right{}
+.voice-card{border:1px solid #e8e8e8;border-radius:6px;padding:2rem;margin-bottom:1rem;transition:border-color .2s}
+.voice-card:hover{border-color:#c41c1c}
+.voice-card-header{display:flex;align-items:center;gap:.75rem;margin-bottom:.875rem}
+.voice-card-icon{width:8px;height:8px;border-radius:50%}
+.voice-card-title{font-weight:600;font-size:.88rem;letter-spacing:.02em}
+.voice-card-desc{font-size:.82rem;color:#666;line-height:1.65}
+.voice-examples{display:flex;flex-direction:column;gap:.75rem;margin-top:1.75rem}
+.voice-ex{padding:1rem 1.25rem;border-radius:4px;font-size:.85rem;line-height:1.55}
+.voice-ex.do{background:#f0faf0;border-left:3px solid #2d7a2d;color:#1a3a1a}
+.voice-ex.dont{background:#fdf0f0;border-left:3px solid #c41c1c;color:#3a1a1a}
+.voice-ex-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;opacity:.5;margin-bottom:.4rem}
+
+/* ── 06 ECOSSISTEMA ── */
+#ecosystem{background:#060203;color:#f5f0f8}
+.eco-intro{font-size:clamp(2rem,5vw,4.5rem);font-weight:700;line-height:.95;letter-spacing:-.05em;max-width:600px;margin-bottom:4rem}
+.eco-intro em{color:#c41c1c;font-style:normal}
+.eco-products{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08)}
+.eco-product{background:#060203;padding:2.5rem 2rem;transition:background .25s}
+.eco-product:hover{background:#0e0b10}
+.eco-product-num{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#c41c1c;margin-bottom:1.5rem;opacity:.7}
+.eco-product-name{font-size:1.4rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem}
+.eco-product-sub{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;opacity:.3;margin-bottom:1rem}
+.eco-product-desc{font-size:.82rem;color:rgba(245,240,248,.45);line-height:1.65}
+.eco-product-badge{display:inline-flex;align-items:center;gap:.35rem;font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;margin-top:1.25rem;padding:.25rem .65rem;border-radius:3px}
+.badge-live{background:rgba(196,28,28,.12);color:#c41c1c;border:1px solid rgba(196,28,28,.2)}
+.badge-soon{background:rgba(255,255,255,.05);color:rgba(255,255,255,.3);border:1px solid rgba(255,255,255,.08)}
+
+/* ── 07 SLOGAN ── */
+#slogan-section{background:#c41c1c;color:#fff;min-height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 3rem}
+.slogan-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;opacity:.5;margin-bottom:2rem}
+.slogan-main{font-size:clamp(3.5rem,12vw,11rem);font-weight:700;letter-spacing:-.06em;line-height:.88;margin-bottom:2rem}
+.slogan-kanji{font-family:'JetBrains Mono',monospace;font-size:.9rem;letter-spacing:.2em;opacity:.35;text-transform:uppercase}
+.slogan-period{opacity:.35}
+
+/* ── 08 CONTATO ── */
+#contact{background:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;min-height:70vh}
+.contact-title{font-size:clamp(2.5rem,7vw,6rem);font-weight:700;letter-spacing:-.06em;line-height:.9;margin-bottom:2.5rem}
+.contact-title em{color:#c41c1c;font-style:normal}
+.contact-links{display:flex;flex-direction:column;gap:.75rem}
+.contact-link{display:flex;justify-content:space-between;align-items:center;padding:1.125rem 0;border-bottom:1px solid #e8e8e8;text-decoration:none;color:#060203;transition:padding-left .25s}
+.contact-link:hover{padding-left:.5rem;border-bottom-color:#c41c1c}
+.contact-link-left{}
+.contact-link-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#999;margin-bottom:.2rem}
+.contact-link-val{font-size:.92rem;font-weight:500}
+.contact-link-arr{font-size:.9rem;color:#c41c1c;transition:transform .25s}
+.contact-link:hover .contact-link-arr{transform:translateX(4px)}
+.contact-right{display:flex;flex-direction:column;gap:0}
+.contact-right-item{padding:1.75rem 0;border-bottom:1px solid #e8e8e8;display:flex;gap:1.5rem;align-items:flex-start}
+.contact-right-num{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:#c41c1c;letter-spacing:.08em;width:24px;flex-shrink:0;margin-top:.15rem}
+.contact-right-text{font-size:.88rem;color:#666;line-height:1.65}
+.contact-right-text strong{color:#060203;font-weight:500}
+
+/* FOOTER */
+footer{background:#060203;color:rgba(245,240,248,.25);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer .ft-logo{font-weight:700;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,248,.5)}
+footer .ft-logo span{color:#c41c1c}
+footer p{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.06em}
+
+/* ANIMATIONS */
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}.d4{transition-delay:.48s}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .intro-grid,.logo-grid,.voice-grid,.contact-grid,.color-usage{grid-template-columns:1fr;gap:3rem}
+  .logo-left{border-right:none;padding-right:0}
+  .logo-right{padding-left:0}
+  .eco-products{grid-template-columns:1fr}
+  .type-weights{grid-template-columns:1fr 1fr}
+  .color-hero-swatches{grid-template-columns:1fr;height:auto}
+  .color-secondaries{grid-template-columns:1fr 1fr}
+  nav{padding:1.25rem 1.5rem}
+  .page{padding:7rem 1.5rem 4rem}
+}
+@media(max-width:600px){
+  .cover-title{font-size:4rem}
+  .slogan-main{font-size:3.5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="cur" id="cur"></div>
+<div class="cring" id="cr"></div>
+<div id="prog"></div>
+
+<nav>
+  <span class="nav-logo">MIRAI<span style="color:#c41c1c">.</span></span>
+  <span class="nav-right">Kaji Labs · Brand Guidelines · 2026</span>
+</nav>
+
+<!-- ══ 00 COVER ══ -->
+<section class="page" id="cover" style="padding:3rem">
+  <div class="cover-top">
+    <span class="cover-logo-text">MIRAI · 未来</span>
+    <span class="cover-kanji">Modern Intelligence<br>for Reliable Automation<br>& Integration</span>
+  </div>
+  <div class="cover-main">
+    <div class="cover-eyebrow">Kaji Labs · Brand Guidelines · Vol. 01</div>
+    <h1 class="cover-title">
+      Brand<br>
+      Guide<span class="red">lines</span>
+    </h1>
+    <p class="cover-subtitle">MIRAI by Kaji Labs · felipeferreira.dev · 2026</p>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-bottom-left">
+      Built for tomorrow.<br>
+      未来 · Future in Japanese<br>
+      Kaji Labs · by Felipe Ferreira
+    </div>
+    <div class="cover-year">26</div>
+  </div>
+</section>
+
+<!-- ══ 01 INTRO ══ -->
+<section class="page" id="intro">
+  <div class="page-tag">01 — Introduction</div>
+  <div class="intro-grid">
+    <div>
+      <h2 class="intro-heading rv">What is<br><em>MIRAI.</em></h2>
+      <div class="intro-body rv d1">
+        <p>MIRAI is not just software. It is the <strong>foundation for smarter operations</strong> — a platform built to automate, integrate and simplify real-world processes from the ground up.</p>
+        <p>Born from a genuine need, MIRAI evolved from a single internal automation tool into a complete ecosystem of intelligent systems, each connected under one vision and one identity.</p>
+        <p>MIRAI is a product of <strong>Kaji Labs</strong> — from the Japanese <em>鍛冶</em>, meaning blacksmith. A quiet nod to the founder's surname, Ferreira, which carries the same meaning in Portuguese. The forge that builds the future.</p>
+      </div>
+    </div>
+    <div class="intro-right rv d2">
+      <div class="intro-stat">
+        <div class="intro-stat-num" style="font-size:2rem;letter-spacing:.08em">KAJI LABS</div>
+        <div class="intro-stat-label">鍛冶 · The company behind MIRAI</div>
+      </div>
+      <div class="intro-stat">
+        <div class="intro-stat-num" style="font-size:1.4rem;letter-spacing:.01em;line-height:1.25">Modern Intelligence<br>for Reliable Automation<br>&amp; Integration</div>
+        <div class="intro-stat-label">Full acronym meaning</div>
+      </div>
+      <div class="intro-stat">
+        <div class="intro-stat-num">未来</div>
+        <div class="intro-stat-label">Future · Japanese Origin</div>
+      </div>
+      <div class="intro-stat">
+        <div class="intro-stat-num" style="font-size:1.4rem;font-family:'JetBrains Mono',monospace;letter-spacing:.08em">Built for tomorrow.</div>
+        <div class="intro-stat-label">Official Slogan</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">01</div>
+</section>
+
+<!-- ══ 02 LOGO ══ -->
+<section class="page" id="logo-section" style="min-height:100vh">
+  <div class="page-tag" style="color:rgba(245,240,248,.3)">02 — Logo</div>
+  <div class="logo-grid">
+    <div class="logo-left">
+      <div class="logo-display">
+        <!-- Logo principal -->
+        <div class="logo-svg-wrap rv">
+          <svg class="logo-hex" viewBox="0 0 100 115" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,4 93,27.5 93,87.5 50,111 7,87.5 7,27.5" fill="#c41c1c"/>
+            <polygon points="50,4 93,27.5 93,87.5 50,111" fill="rgba(0,0,0,0.2)"/>
+            <polygon points="50,4 93,27.5 50,57.5 7,27.5" fill="rgba(255,255,255,0.06)"/>
+            <text x="50" y="73" font-family="Space Grotesk, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="white" letter-spacing="-1">FF</text>
+          </svg>
+          <div>
+            <div class="logo-wordmark">MIRAI</div>
+            <div class="logo-tagline">未来 · Built for tomorrow. · by Kaji Labs</div>
+          </div>
+        </div>
+        <!-- Variações -->
+        <div class="logo-var-label rv d1">Logo variations</div>
+        <div class="logo-var-row rv d2">
+          <div class="logo-var-dark">
+            <svg width="28" height="32" viewBox="0 0 100 115"><polygon points="50,4 93,27.5 93,87.5 50,111 7,87.5 7,27.5" fill="#c41c1c"/><polygon points="50,4 93,27.5 93,87.5 50,111" fill="rgba(0,0,0,0.2)"/><text x="50" y="73" font-family="monospace" font-size="32" font-weight="700" text-anchor="middle" fill="white">FF</text></svg>
+            <span style="font-weight:700;font-size:1.1rem;letter-spacing:.18em">MIRAI</span>
+          </div>
+          <div class="logo-var-light">
+            <svg width="28" height="32" viewBox="0 0 100 115"><polygon points="50,4 93,27.5 93,87.5 50,111 7,87.5 7,27.5" fill="#c41c1c"/><polygon points="50,4 93,27.5 93,87.5 50,111" fill="rgba(0,0,0,0.2)"/><text x="50" y="73" font-family="monospace" font-size="32" font-weight="700" text-anchor="middle" fill="white">FF</text></svg>
+            <span class="logo-wordmark" style="font-size:1.1rem">MIRAI</span>
+          </div>
+        </div>
+        <div class="logo-var-row rv d3">
+          <div class="logo-var-red">
+            <svg width="28" height="32" viewBox="0 0 100 115"><polygon points="50,4 93,27.5 93,87.5 50,111 7,87.5 7,27.5" fill="rgba(255,255,255,0.2)"/><text x="50" y="73" font-family="monospace" font-size="32" font-weight="700" text-anchor="middle" fill="white">FF</text></svg>
+            <span style="font-weight:700;font-size:1.1rem;letter-spacing:.18em;color:#fff">MIRAI</span>
+          </div>
+          <!-- Ícone somente -->
+          <div style="background:#f5f0f5;padding:1.5rem 2rem;border-radius:4px;display:flex;align-items:center;justify-content:center;flex:0.5">
+            <svg width="32" height="37" viewBox="0 0 100 115"><polygon points="50,4 93,27.5 93,87.5 50,111 7,87.5 7,27.5" fill="#c41c1c"/><polygon points="50,4 93,27.5 93,87.5 50,111" fill="rgba(0,0,0,0.2)"/><text x="50" y="73" font-family="monospace" font-size="32" font-weight="700" text-anchor="middle" fill="white">FF</text></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="logo-right rv d2">
+      <div class="logo-right-title">Logo principles.</div>
+      <div class="logo-rule">
+        <div class="logo-rule-dot"></div>
+        <div class="logo-rule-text">The hexagon represents the CORE — a central platform from which all modules radiate. Six sides, six values, one system.</div>
+      </div>
+      <div class="logo-rule">
+        <div class="logo-rule-dot"></div>
+        <div class="logo-rule-text">The ⟨FF⟩ mark references the founder's initials and the code brackets — connecting personal identity to technical craft.</div>
+      </div>
+      <div class="logo-rule">
+        <div class="logo-rule-dot"></div>
+        <div class="logo-rule-text">Never distort, rotate or recolor the logo outside the approved palette. Minimum size: 24px height for the icon mark.</div>
+      </div>
+      <div class="logo-rule">
+        <div class="logo-rule-dot"></div>
+        <div class="logo-rule-text">Maintain clear space equal to the height of the "M" letterform on all sides of the full logo.</div>
+      </div>
+      <div class="safe-space rv d3">
+        <span class="safe-space-label top">Clear space — 1x</span>
+        <span class="safe-space-label bottom">Clear space — 1x</span>
+        <span class="safe-space-label left">1x</span>
+        <span class="safe-space-label right">1x</span>
+        <div style="display:flex;align-items:center;gap:.875rem;border:1px dashed rgba(255,255,255,.15);padding:1.25rem 2rem;border-radius:2px">
+          <svg width="22" height="26" viewBox="0 0 100 115"><polygon points="50,4 93,27.5 93,87.5 50,111 7,87.5 7,27.5" fill="#c41c1c"/><text x="50" y="73" font-family="monospace" font-size="32" font-weight="700" text-anchor="middle" fill="white">FF</text></svg>
+          <span style="font-weight:700;font-size:.9rem;letter-spacing:.18em">MIRAI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-num page-num-light">02</div>
+</section>
+
+<!-- ══ 03 CORES ══ -->
+<section class="page" id="colors">
+  <div class="page-tag">03 — Color</div>
+  <h2 style="font-size:clamp(2rem,5vw,4rem);font-weight:700;letter-spacing:-.05em;margin-bottom:2.5rem" class="rv">The palette.</h2>
+  <div class="color-hero rv d1">
+    <div class="color-hero-swatches">
+      <div class="swatch-primary" style="color:#fff">
+        <div>
+          <div class="swatch-name">MIRAI Red</div>
+          <div class="swatch-hex">#C41C1C</div>
+        </div>
+        <div class="swatch-role">Primary · Action · Brand</div>
+      </div>
+      <div class="swatch-dark" style="color:rgba(245,240,248,.8)">
+        <div>
+          <div class="swatch-name">MIRAI Black</div>
+          <div class="swatch-hex">#060203</div>
+        </div>
+        <div class="swatch-role">Foundation · Depth</div>
+      </div>
+      <div style="background:#fff;padding:2rem;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #e8e8e8">
+        <div>
+          <div class="swatch-name" style="color:#060203">White</div>
+          <div class="swatch-hex" style="color:#888">#FFFFFF</div>
+        </div>
+        <div class="swatch-role" style="color:#999">Backgrounds · Text on dark</div>
+      </div>
+    </div>
+  </div>
+  <div class="color-secondaries rv d2">
+    <div class="swatch-sm" style="background:#f5f0f8;color:#060203">
+      <div><div class="swatch-name">Off-White</div><div class="swatch-hex">#F5F0F8</div></div>
+      <div class="swatch-role" style="color:#555">Text on dark</div>
+    </div>
+    <div class="swatch-sm" style="background:#8a0c0e;color:#fff">
+      <div><div class="swatch-name">Deep Red</div><div class="swatch-hex">#8A0C0E</div></div>
+      <div class="swatch-role" style="opacity:.5">Hover · Press states</div>
+    </div>
+    <div class="swatch-sm" style="background:#1a1a1a;color:rgba(245,240,248,.6)">
+      <div><div class="swatch-name">Charcoal</div><div class="swatch-hex">#1A1A1A</div></div>
+      <div class="swatch-role" style="opacity:.4">Card backgrounds</div>
+    </div>
+    <div class="swatch-sm" style="background:#e8e8e8;color:#060203">
+      <div><div class="swatch-name">Light Gray</div><div class="swatch-hex">#E8E8E8</div></div>
+      <div class="swatch-role" style="color:#555">Dividers · Borders</div>
+    </div>
+  </div>
+  <div class="color-do-dont rv d3" style="margin-top:2.5rem">
+    <div class="do-card">
+      <div class="do-card-preview" style="background:#060203">
+        <span style="font-weight:700;font-size:.9rem;letter-spacing:.08em;color:#c41c1c">MIRAI</span>
+      </div>
+      <div class="do-card-label"><span class="do-label">✓ Do</span> — Red on black</div>
+    </div>
+    <div class="do-card">
+      <div class="do-card-preview" style="background:#c41c1c">
+        <span style="font-weight:700;font-size:.9rem;letter-spacing:.08em;color:#fff">MIRAI</span>
+      </div>
+      <div class="do-card-label"><span class="do-label">✓ Do</span> — White on red</div>
+    </div>
+    <div class="do-card">
+      <div class="do-card-preview" style="background:#060203">
+        <span style="font-weight:700;font-size:.9rem;letter-spacing:.08em;color:#8a0c0e">MIRAI</span>
+      </div>
+      <div class="do-card-label"><span class="dont-label">✗ Avoid</span> — Deep red on black</div>
+    </div>
+    <div class="do-card">
+      <div class="do-card-preview" style="background:#c41c1c">
+        <span style="font-weight:700;font-size:.9rem;letter-spacing:.08em;color:#060203">MIRAI</span>
+      </div>
+      <div class="do-card-label"><span class="dont-label">✗ Avoid</span> — Black on red</div>
+    </div>
+  </div>
+  <div class="page-num" style="color:rgba(0,0,0,.04)">03</div>
+</section>
+
+<!-- ══ 04 TIPOGRAFIA ══ -->
+<section class="page" id="typography">
+  <div class="page-tag" style="color:rgba(245,240,248,.3)">04 — Typography</div>
+  <div class="type-hero">
+    <div class="type-specimen rv">Aa</div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end">
+      <div class="type-specimen-name rv d1">Space Grotesk — Primary</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:.65rem;color:rgba(245,240,248,.25);letter-spacing:.12em" class="rv d1">Display · Headings · UI Labels</div>
+    </div>
+  </div>
+  <div class="type-weights rv d1">
+    <div class="type-weight">
+      <div class="type-weight-sample" style="font-weight:300;color:#f5f0f8">Light</div>
+      <div class="type-weight-label">300 · Light</div>
+    </div>
+    <div class="type-weight">
+      <div class="type-weight-sample" style="font-weight:400;color:#f5f0f8">Regular</div>
+      <div class="type-weight-label">400 · Regular</div>
+    </div>
+    <div class="type-weight">
+      <div class="type-weight-sample" style="font-weight:600;color:#f5f0f8">SemiBold</div>
+      <div class="type-weight-label">600 · SemiBold</div>
+    </div>
+    <div class="type-weight">
+      <div class="type-weight-sample" style="font-weight:700;color:#f5f0f8">Bold</div>
+      <div class="type-weight-label">700 · Bold</div>
+    </div>
+  </div>
+  <div class="type-hierarchy rv d2">
+    <div class="type-level">
+      <div class="type-level-tag">Display</div>
+      <div style="font-size:2.5rem;font-weight:700;letter-spacing:-.06em;color:#f5f0f8;line-height:1">MIRAI One</div>
+      <div class="type-level-spec">Space Grotesk 700<br>clamp(2.5rem, 8vw, 7rem)<br>ls: -0.06em</div>
+    </div>
+    <div class="type-level">
+      <div class="type-level-tag">Heading</div>
+      <div style="font-size:1.5rem;font-weight:700;letter-spacing:-.04em;color:#f5f0f8;line-height:1.1">Platform section title</div>
+      <div class="type-level-spec">Space Grotesk 700<br>clamp(1.5rem, 4vw, 3rem)<br>ls: -0.04em</div>
+    </div>
+    <div class="type-level">
+      <div class="type-level-tag">Body</div>
+      <div style="font-size:1rem;font-weight:400;color:rgba(245,240,248,.6);line-height:1.8">Readable, clear, comfortable at paragraph length.</div>
+      <div class="type-level-spec">Space Grotesk 400<br>1rem / 1.05rem<br>lh: 1.75–1.85</div>
+    </div>
+    <div class="type-level">
+      <div class="type-level-tag">Label</div>
+      <div class="type-level-mono" style="font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,240,248,.3)">MODULE · STATUS · METADATA</div>
+      <div class="type-level-spec">JetBrains Mono 400<br>0.62–0.72rem<br>ls: 0.12–0.22em · UPPERCASE</div>
+    </div>
+  </div>
+  <!-- Mono specimen -->
+  <div style="margin-top:2.5rem;padding:1.5rem 2rem;border:1px solid rgba(255,255,255,.06);border-radius:4px" class="rv d3">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,240,248,.25);margin-bottom:.75rem">Secondary · JetBrains Mono — Labels, codes, metadata</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:1.2rem;color:rgba(245,240,248,.5);letter-spacing:.04em">MIRAI by Kaji Labs · 未来 · Built for tomorrow. · v1.0.0</div>
+  </div>
+  <div class="page-num page-num-light">04</div>
+</section>
+
+<!-- ══ 05 TOM DE VOZ ══ -->
+<section class="page" id="voice">
+  <div class="page-tag">05 — Voice &amp; Tone</div>
+  <div class="voice-grid">
+    <div>
+      <h2 class="rv" style="font-size:clamp(2rem,5vw,4rem);font-weight:700;letter-spacing:-.05em;margin-bottom:2rem">How MIRAI<br>speaks.</h2>
+      <p class="rv d1" style="font-size:1rem;color:#555;line-height:1.85;max-width:400px">MIRAI communicates with clarity, confidence and precision. The voice is direct without being cold, technical without being inaccessible. Every word earns its place.</p>
+      <div class="voice-examples rv d2">
+        <div class="voice-ex do">
+          <div class="voice-ex-label">✓ Write this</div>
+          "Automate your financial operations in minutes — no setup required."
+        </div>
+        <div class="voice-ex dont">
+          <div class="voice-ex-label">✗ Not this</div>
+          "Our revolutionary AI-powered platform leverages cutting-edge technology to transform your workflows!"
+        </div>
+        <div class="voice-ex do">
+          <div class="voice-ex-label">✓ Write this</div>
+          "Built for real operations. Used every day."
+        </div>
+        <div class="voice-ex dont">
+          <div class="voice-ex-label">✗ Not this</div>
+          "The ultimate next-gen solution for all your automation needs!!!"
+        </div>
+      </div>
+    </div>
+    <div class="rv d2">
+      <div class="voice-card">
+        <div class="voice-card-header">
+          <div class="voice-card-icon" style="background:#c41c1c"></div>
+          <div class="voice-card-title">Clear</div>
+        </div>
+        <div class="voice-card-desc">Say exactly what you mean. No jargon for its own sake. If it can be said in fewer words, say it in fewer words.</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-card-header">
+          <div class="voice-card-icon" style="background:#060203"></div>
+          <div class="voice-card-title">Confident</div>
+        </div>
+        <div class="voice-card-desc">State things as facts. Avoid hedging language like "maybe", "could" or "perhaps". MIRAI knows what it does.</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-card-header">
+          <div class="voice-card-icon" style="background:#8a0c0e"></div>
+          <div class="voice-card-title">Precise</div>
+        </div>
+        <div class="voice-card-desc">Use specific numbers and outcomes. "Reduces manual entries" beats "improves efficiency". Show, don't promise.</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-card-header">
+          <div class="voice-card-icon" style="background:#999"></div>
+          <div class="voice-card-title">Grounded</div>
+        </div>
+        <div class="voice-card-desc">Always return to real use. MIRAI is used in actual operations, solving actual problems. That is the story.</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-num" style="color:rgba(0,0,0,.04)">05</div>
+</section>
+
+<!-- ══ 06 ECOSSISTEMA ══ -->
+<section class="page" id="ecosystem">
+  <div class="page-tag" style="color:rgba(245,240,248,.3)">06 — Ecosystem</div>
+  <h2 class="eco-intro rv">One platform.<br><em>Many modules.</em></h2>
+  <div class="eco-products rv d1">
+    <div class="eco-product">
+      <div class="eco-product-num">001 · Core</div>
+      <div class="eco-product-name">MIRAI ONE</div>
+      <div class="eco-product-sub">Enterprise Automation</div>
+      <div class="eco-product-desc">The operational hub. Modules for PIX deposits, invoice management, billing dispatch, payment reconciliation and Google Sheets integration.</div>
+      <div class="eco-product-badge badge-live">● Live</div>
+    </div>
+    <div class="eco-product">
+      <div class="eco-product-num">002 · Personal</div>
+      <div class="eco-product-name">MIRAI FINANCE</div>
+      <div class="eco-product-sub">Personal Finance</div>
+      <div class="eco-product-desc">Personal finance management with Google Auth, revenue and expense dashboard, card management, savings goals and Excel export.</div>
+      <div class="eco-product-badge badge-live">● Live</div>
+    </div>
+    <div class="eco-product">
+      <div class="eco-product-num">003 · Next</div>
+      <div class="eco-product-name">MIRAI DOCS</div>
+      <div class="eco-product-sub">Report Generation</div>
+      <div class="eco-product-desc">Automatic generation of financial reports, control maps and operational documents. Structured data, formatted output.</div>
+      <div class="eco-product-badge badge-soon">◌ Soon</div>
+    </div>
+  </div>
+  <div class="page-num page-num-light">06</div>
+</section>
+
+<!-- ══ 07 SLOGAN ══ -->
+<section id="slogan-section" class="rv">
+  <div class="slogan-eyebrow">MIRAI · 未来 · Official Slogan</div>
+  <h2 class="slogan-main">Built for<br>tomorrow<span class="slogan-period">.</span></h2>
+  <div class="slogan-kanji">未来 · Future in Japanese · Modern Intelligence for Reliable Automation &amp; Integration</div>
+</section>
+
+<!-- ══ 08 CONTATO ══ -->
+<section class="page" id="contact" style="background:#fff">
+  <div class="page-tag">08 — Contact</div>
+  <div class="contact-grid">
+    <div>
+      <h2 class="contact-title rv">Let's build<br><em>tomorrow.</em></h2>
+      <div class="contact-links rv d1">
+        <a href="https://felipeferreira.dev" target="_blank" rel="noopener" class="contact-link">
+          <div class="contact-link-left">
+            <div class="contact-link-label">Portfolio</div>
+            <div class="contact-link-val">felipeferreira.dev</div>
+          </div>
+          <div class="contact-link-arr">→</div>
+        </a>
+        <a href="https://linkedin.com/in/felipe-ferreira1507f" target="_blank" rel="noopener" class="contact-link">
+          <div class="contact-link-left">
+            <div class="contact-link-label">LinkedIn</div>
+            <div class="contact-link-val">felipe-ferreira1507f</div>
+          </div>
+          <div class="contact-link-arr">→</div>
+        </a>
+        <a href="https://github.com/Felipe-1507" target="_blank" rel="noopener" class="contact-link">
+          <div class="contact-link-left">
+            <div class="contact-link-label">GitHub</div>
+            <div class="contact-link-val">Felipe-1507</div>
+          </div>
+          <div class="contact-link-arr">→</div>
+        </a>
+        <a href="mailto:felipeferreira1507@gmail.com" class="contact-link">
+          <div class="contact-link-left">
+            <div class="contact-link-label">Email</div>
+            <div class="contact-link-val">felipeferreira1507@gmail.com</div>
+          </div>
+          <div class="contact-link-arr">→</div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-right rv d2">
+      <div class="contact-right-item">
+        <div class="contact-right-num">01</div>
+        <div class="contact-right-text">All MIRAI products are developed and maintained by <strong>Kaji Labs</strong>, founded by Felipe Ferreira — developer and systems analyst based in Itapetininga, SP — Brazil.</div>
+      </div>
+      <div class="contact-right-item">
+        <div class="contact-right-num">02</div>
+        <div class="contact-right-text">The MIRAI ecosystem grows with real needs. Each new module is built to solve a specific problem — <strong>no bloat, no guesswork</strong>.</div>
+      </div>
+      <div class="contact-right-item">
+        <div class="contact-right-num">03</div>
+        <div class="contact-right-text">For partnerships, collaborations or questions about the platform, reach out directly. <strong>Direct conversations only.</strong></div>
+      </div>
+      <div class="contact-right-item" style="border-bottom:none">
+        <div class="contact-right-num">→</div>
+        <div class="contact-right-text" style="font-size:1.1rem;font-weight:700;color:#060203;letter-spacing:-.02em">MIRAI by Kaji Labs · 未来 · Built for tomorrow.</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-num" style="color:rgba(0,0,0,.04)">08</div>
+</section>
+
+<footer>
+  <div class="ft-logo">KAJI LABS<span>.</span></div>
+  <p>MIRAI by Kaji Labs · Brand Guidelines · Vol. 01 · 2026</p>
+  <p>未来 · Built for tomorrow. · kaji.felipeferreira.dev</p>
+</footer>
+
+<script>
+// CURSOR
+const cur=document.getElementById('cur'),cr=document.getElementById('cr');
+let mx=window.innerWidth/2,my=window.innerHeight/2,rx=mx,ry=my;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function raf(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(raf)})();
+document.querySelectorAll('a,button,.voice-card,.intro-stat,.eco-product,.contact-link').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cr.classList.add('big'));
+  el.addEventListener('mouseleave',()=>cr.classList.remove('big'));
+});
+
+// PROGRESS
+window.addEventListener('scroll',()=>{
+  document.getElementById('prog').style.width=
+    Math.min(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100,100)+'%';
+});
+
+// REVEAL
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')});
+},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
