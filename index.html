@@ -80,14 +80,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 3rem;display
 /* Variations */
 .logo-variations{display:flex;flex-direction:column;gap:1.5rem}
 .logo-var-label{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;opacity:.3;margin-bottom:.75rem}
-.logo-var-row{display:flex;gap:1.5rem;align-items:center}
+.logo-var-row{display:flex;gap:1rem;align-items:stretch}
+/* Logo variation cards */
+.logo-var-dark,.logo-var-light,.logo-var-red,.logo-var-icon{
+  padding:1.6rem 2rem;border-radius:4px;display:flex;align-items:center;justify-content:center;
+  gap:1.1rem;flex:1;min-height:94px;text-align:center
+}
 /* Dark version */
-.logo-var-dark{background:#060203;padding:1.5rem 2rem;border:1px solid rgba(255,255,255,.08);border-radius:4px;display:flex;align-items:center;gap:.875rem;flex:1}
+.logo-var-dark{background:#060203;border:1px solid rgba(255,255,255,.08)}
 /* Light version */
-.logo-var-light{background:#fff;padding:1.5rem 2rem;border-radius:4px;display:flex;align-items:center;gap:.875rem;flex:1}
+.logo-var-light{background:#fff}
 .logo-var-light .logo-wordmark{color:#060203}
 /* Red version */
-.logo-var-red{background:#c41c1c;padding:1.5rem 2rem;border-radius:4px;display:flex;align-items:center;gap:.875rem;flex:1}
+.logo-var-red{background:#c41c1c}
+.logo-var-icon{background:#f5f0f5}
+.logo-var-dark svg,.logo-var-light svg,.logo-var-red svg{width:40px;height:46px;flex-shrink:0;display:block}
+.logo-var-icon svg{width:46px;height:52px;flex-shrink:0;display:block}
+.logo-var-dark span,.logo-var-light span,.logo-var-red span{
+  font-weight:700;font-size:1.25rem;letter-spacing:.2em;line-height:1
+}
 .logo-right{padding-left:4rem}
 .logo-right-title{font-size:clamp(1.5rem,4vw,3rem);font-weight:700;letter-spacing:-.04em;margin-bottom:1.5rem}
 .logo-rule{display:flex;gap:1.25rem;margin-bottom:1.25rem;align-items:flex-start}
@@ -345,7 +356,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:
               <polygon points="28,65 50,80 72,65 72,73 50,88 28,73" fill="#8a0c0e"/>
               <polygon points="36,53 50,66 64,53 64,60 50,73 36,60" fill="#6b0608"/>
             </svg>
-            <span style="font-weight:700;font-size:1.1rem;letter-spacing:.18em">MIRAI</span>
+            <span>MIRAI</span>
           </div>
           <!-- Light bg -->
           <div class="logo-var-light">
@@ -359,7 +370,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:
               <polygon points="28,65 50,80 72,65 72,73 50,88 28,73" fill="#8a0c0e"/>
               <polygon points="36,53 50,66 64,53 64,60 50,73 36,60" fill="#6b0608"/>
             </svg>
-            <span class="logo-wordmark" style="font-size:1.1rem;color:#060203">MIRAI</span>
+            <span class="logo-wordmark">MIRAI</span>
           </div>
         </div>
         <div class="logo-var-row rv d3">
@@ -375,10 +386,10 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:
               <polygon points="28,65 50,80 72,65 72,73 50,88 28,73" fill="rgba(255,255,255,0.6)"/>
               <polygon points="36,53 50,66 64,53 64,60 50,73 36,60" fill="rgba(255,255,255,0.4)"/>
             </svg>
-            <span style="font-weight:700;font-size:1.1rem;letter-spacing:.18em;color:#fff">MIRAI</span>
+            <span style="color:#fff">MIRAI</span>
           </div>
           <!-- Icon only -->
-          <div style="background:#f5f0f5;padding:1.5rem 2rem;border-radius:4px;display:flex;align-items:center;justify-content:center;flex:0.5">
+          <div class="logo-var-icon">
             <svg width="36" height="40" viewBox="0 0 100 112">
               <polygon points="50,2 37,20 44,20 44,34 56,34 56,20 63,20" fill="#c41c1c"/>
               <polygon points="10,23 26,23 36,78 20,78" fill="#c41c1c"/>
