@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MIRAI — Brand Guidelines · Kaji Labs</title>
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+<link rel="shortcut icon" href="./favicon.ico">
+<meta name="theme-color" content="#060203">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -23,7 +28,8 @@ body{font-family:'Space Grotesk',sans-serif;background:#fff;color:#060203;overfl
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 3rem;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference}
-.nav-logo{font-weight:700;font-size:.85rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;text-decoration:none}
+.nav-logo{font-weight:700;font-size:.85rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:.7rem}
+.nav-logo img{width:20px;height:20px;display:block;object-fit:contain;flex-shrink:0}
 .nav-right{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:rgba(255,255,255,.5);letter-spacing:.12em;text-transform:uppercase}
 
 /* PAGES — cada seção é uma "página" do brandbook */
@@ -35,7 +41,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 3rem;display
 /* ── 00 COVER ── */
 #cover{background:#060203;color:#f5f0f8;min-height:100vh;justify-content:space-between;padding:3rem}
 .cover-top{display:flex;justify-content:space-between;align-items:flex-start}
-.cover-logo-text{font-weight:700;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;opacity:.5}
+.cover-logo-text{font-weight:700;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;opacity:.5;display:inline-flex;align-items:center;gap:.8rem}
+.cover-logo-text img{width:30px;height:30px;display:block;object-fit:contain;opacity:1}
 .cover-kanji{font-family:'Space Grotesk',sans-serif;font-size:.8rem;letter-spacing:.12em;opacity:.3}
 .cover-main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:4rem 0}
 .cover-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;opacity:.4;margin-bottom:1.5rem}
@@ -70,6 +77,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 3rem;display
 /* SVG Logo MIRAI */
 .logo-svg-wrap{display:flex;align-items:center;gap:1.25rem;margin-bottom:2.5rem}
 .logo-hex{width:64px;height:64px;flex-shrink:0}
+.logo-img{display:block;object-fit:contain;flex-shrink:0}
+.logo-img.white{filter:brightness(0) invert(1)}
 .logo-wordmark{font-size:2.2rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
 .logo-tagline{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;opacity:.35;margin-top:.4rem}
 /* Variations */
@@ -217,11 +226,16 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:
   .color-secondaries{grid-template-columns:1fr 1fr}
   nav{padding:1.25rem 1.5rem}
   .page{padding:7rem 1.5rem 4rem}
+  .nav-logo img{width:18px;height:18px}
+  .cover-logo-text img{width:26px;height:26px}
 }
+
 @media(max-width:600px){
+  .cover-top{gap:1rem;align-items:flex-start;flex-direction:column}
   .cover-title{font-size:4rem}
   .slogan-main{font-size:3.5rem}
 }
+
 </style>
 </head>
 <body>
@@ -231,14 +245,14 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:
 <div id="prog"></div>
 
 <nav>
-  <span class="nav-logo">MIRAI<span style="color:#c41c1c">.</span></span>
+  <span class="nav-logo"><img src="./mirai-logo-transparent.png" alt="MIRAI logo"><span>MIRAI<span style="color:#c41c1c">.</span></span></span>
   <span class="nav-right">Kaji Labs · Brand Guidelines · 2026</span>
 </nav>
 
 <!-- ══ 00 COVER ══ -->
 <section class="page" id="cover" style="padding:3rem">
   <div class="cover-top">
-    <span class="cover-logo-text">MIRAI · 未来</span>
+    <span class="cover-logo-text"><img src="./mirai-logo-transparent.png" alt="MIRAI logo"><span>MIRAI · 未来</span></span>
     <span class="cover-kanji">Modern Intelligence<br>for Reliable Automation<br>& Integration</span>
   </div>
   <div class="cover-main">
@@ -301,12 +315,8 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:
       <div class="logo-display">
         <!-- Logo principal -->
         <div class="logo-svg-wrap rv">
-          <svg class="logo-hex" viewBox="0 0 100 115" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="50,4 93,27.5 93,87.5 50,111 7,87.5 7,27.5" fill="#c41c1c"/>
-            <polygon points="50,4 93,27.5 93,87.5 50,111" fill="rgba(0,0,0,0.2)"/>
-            <polygon points="50,4 93,27.5 50,57.5 7,27.5" fill="rgba(255,255,255,0.06)"/>
-            <text x="50" y="73" font-family="Space Grotesk, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="white" letter-spacing="-1">FF</text>
-          </svg>
+          <!-- MIRAI M+Arrow SVG logo -->
+          <img class="logo-hex logo-img" src="./mirai-logo-transparent.png" alt="MIRAI logo">
           <div>
             <div class="logo-wordmark">MIRAI</div>
             <div class="logo-tagline">未来 · Built for tomorrow. · by Kaji Labs</div>
@@ -315,23 +325,26 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:
         <!-- Variações -->
         <div class="logo-var-label rv d1">Logo variations</div>
         <div class="logo-var-row rv d2">
+          <!-- Dark bg -->
           <div class="logo-var-dark">
-            <svg width="28" height="32" viewBox="0 0 100 115"><polygon points="50,4 93,27.5 93,87.5 50,111 7,87.5 7,27.5" fill="#c41c1c"/><polygon points="50,4 93,27.5 93,87.5 50,111" fill="rgba(0,0,0,0.2)"/><text x="50" y="73" font-family="monospace" font-size="32" font-weight="700" text-anchor="middle" fill="white">FF</text></svg>
+            <img class="logo-img" src="./mirai-logo-transparent.png" alt="MIRAI logo" style="width:28px;height:32px">
             <span style="font-weight:700;font-size:1.1rem;letter-spacing:.18em">MIRAI</span>
           </div>
+          <!-- Light bg -->
           <div class="logo-var-light">
-            <svg width="28" height="32" viewBox="0 0 100 115"><polygon points="50,4 93,27.5 93,87.5 50,111 7,87.5 7,27.5" fill="#c41c1c"/><polygon points="50,4 93,27.5 93,87.5 50,111" fill="rgba(0,0,0,0.2)"/><text x="50" y="73" font-family="monospace" font-size="32" font-weight="700" text-anchor="middle" fill="white">FF</text></svg>
-            <span class="logo-wordmark" style="font-size:1.1rem">MIRAI</span>
+            <img class="logo-img" src="./mirai-logo-transparent.png" alt="MIRAI logo" style="width:28px;height:32px">
+            <span class="logo-wordmark" style="font-size:1.1rem;color:#060203">MIRAI</span>
           </div>
         </div>
         <div class="logo-var-row rv d3">
-          <div class="logo-var-red">
-            <svg width="28" height="32" viewBox="0 0 100 115"><polygon points="50,4 93,27.5 93,87.5 50,111 7,87.5 7,27.5" fill="rgba(255,255,255,0.2)"/><text x="50" y="73" font-family="monospace" font-size="32" font-weight="700" text-anchor="middle" fill="white">FF</text></svg>
+          <!-- Red bg (mono white) -->
+          <div class="logo-var-red" style="background:#9f1116">
+            <img class="logo-img white" src="./mirai-logo-transparent.png" alt="MIRAI logo" style="width:28px;height:32px">
             <span style="font-weight:700;font-size:1.1rem;letter-spacing:.18em;color:#fff">MIRAI</span>
           </div>
-          <!-- Ícone somente -->
-          <div style="background:#f5f0f5;padding:1.5rem 2rem;border-radius:4px;display:flex;align-items:center;justify-content:center;flex:0.5">
-            <svg width="32" height="37" viewBox="0 0 100 115"><polygon points="50,4 93,27.5 93,87.5 50,111 7,87.5 7,27.5" fill="#c41c1c"/><polygon points="50,4 93,27.5 93,87.5 50,111" fill="rgba(0,0,0,0.2)"/><text x="50" y="73" font-family="monospace" font-size="32" font-weight="700" text-anchor="middle" fill="white">FF</text></svg>
+          <!-- Icon only -->
+          <div style="background:#fff;padding:1.5rem 2rem;border-radius:4px;display:flex;align-items:center;justify-content:center;flex:0.5;border:1px solid #e8e8e8">
+            <img class="logo-img" src="./mirai-logo-transparent.png" alt="MIRAI logo" style="width:36px;height:40px">
           </div>
         </div>
       </div>
@@ -340,19 +353,19 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:
       <div class="logo-right-title">Logo principles.</div>
       <div class="logo-rule">
         <div class="logo-rule-dot"></div>
-        <div class="logo-rule-text">The hexagon represents the CORE — a central platform from which all modules radiate. Six sides, six values, one system.</div>
+        <div class="logo-rule-text">The double M monogram represents the MIRAI ecosystem — two layers, one foundation. The upward arrow signals growth, direction and future.</div>
       </div>
       <div class="logo-rule">
         <div class="logo-rule-dot"></div>
-        <div class="logo-rule-text">The ⟨FF⟩ mark references the founder's initials and the code brackets — connecting personal identity to technical craft.</div>
+        <div class="logo-rule-text">The stacked chevrons at the base represent the modular architecture of the platform — layers building upon each other.</div>
+      </div>
+      <div class="logo-rule">
+        <div class="logo-rule-dot"></div>
+        <div class="logo-rule-text">The red accent on the "A" in the MIRAI wordmark highlights Automation — the core technical purpose of the platform.</div>
       </div>
       <div class="logo-rule">
         <div class="logo-rule-dot"></div>
         <div class="logo-rule-text">Never distort, rotate or recolor the logo outside the approved palette. Minimum size: 24px height for the icon mark.</div>
-      </div>
-      <div class="logo-rule">
-        <div class="logo-rule-dot"></div>
-        <div class="logo-rule-text">Maintain clear space equal to the height of the "M" letterform on all sides of the full logo.</div>
       </div>
       <div class="safe-space rv d3">
         <span class="safe-space-label top">Clear space — 1x</span>
@@ -360,7 +373,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:
         <span class="safe-space-label left">1x</span>
         <span class="safe-space-label right">1x</span>
         <div style="display:flex;align-items:center;gap:.875rem;border:1px dashed rgba(255,255,255,.15);padding:1.25rem 2rem;border-radius:2px">
-          <svg width="22" height="26" viewBox="0 0 100 115"><polygon points="50,4 93,27.5 93,87.5 50,111 7,87.5 7,27.5" fill="#c41c1c"/><text x="50" y="73" font-family="monospace" font-size="32" font-weight="700" text-anchor="middle" fill="white">FF</text></svg>
+          <img class="logo-img" src="./mirai-logo-transparent.png" alt="MIRAI logo" style="width:22px;height:25px">
           <span style="font-weight:700;font-size:.9rem;letter-spacing:.18em">MIRAI</span>
         </div>
       </div>
@@ -368,6 +381,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:
   </div>
   <div class="page-num page-num-light">02</div>
 </section>
+
 
 <!-- ══ 03 CORES ══ -->
 <section class="page" id="colors">
