@@ -4,11 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MIRAI — Brand Guidelines · Kaji Labs</title>
-<link rel="icon" type="image/svg+xml" href="./favicon.svg?v=9">
-<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png?v=9">
-<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=9">
-<link rel="shortcut icon" href="./favicon.ico?v=9">
-<meta name="theme-color" content="#060203">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -27,19 +22,9 @@ body{font-family:'Space Grotesk',sans-serif;background:#fff;color:#060203;overfl
 #prog{position:fixed;top:0;left:0;height:2px;background:#c41c1c;z-index:200;transition:width .08s}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 3rem;display:flex;justify-content:space-between;align-items:center;background:transparent;transition:color .2s ease,opacity .2s ease}
-.nav-logo{font-weight:700;font-size:.85rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;text-decoration:none;transition:color .2s ease}
-.nav-logo-dot{transition:color .2s ease}
-.nav-right{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;transition:color .2s ease}
-nav.nav-on-dark .nav-logo{color:#fff}
-nav.nav-on-dark .nav-logo-dot{color:#c41c1c}
-nav.nav-on-dark .nav-right{color:rgba(255,255,255,.5)}
-nav.nav-on-light .nav-logo{color:#060203}
-nav.nav-on-light .nav-logo-dot{color:#c41c1c}
-nav.nav-on-light .nav-right{color:rgba(6,2,3,.45)}
-nav.nav-on-red .nav-logo{color:#fff}
-nav.nav-on-red .nav-logo-dot{color:#fff}
-nav.nav-on-red .nav-right{color:rgba(255,255,255,.6)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 3rem;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference}
+.nav-logo{font-weight:700;font-size:.85rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;text-decoration:none}
+.nav-right{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:rgba(255,255,255,.5);letter-spacing:.12em;text-transform:uppercase}
 
 /* PAGES — cada seção é uma "página" do brandbook */
 .page{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 3rem 5rem;position:relative;overflow:hidden}
@@ -50,8 +35,7 @@ nav.nav-on-red .nav-right{color:rgba(255,255,255,.6)}
 /* ── 00 COVER ── */
 #cover{background:#060203;color:#f5f0f8;min-height:100vh;justify-content:space-between;padding:3rem}
 .cover-top{display:flex;justify-content:space-between;align-items:flex-start}
-.cover-logo-text{font-weight:700;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;opacity:.5;display:inline-flex;align-items:center;gap:.8rem}
-.cover-logo-text img{width:30px;height:30px;display:block;object-fit:contain;opacity:1}
+.cover-logo-text{font-weight:700;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;opacity:.5}
 .cover-kanji{font-family:'Space Grotesk',sans-serif;font-size:.8rem;letter-spacing:.12em;opacity:.3}
 .cover-main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:4rem 0}
 .cover-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;opacity:.4;margin-bottom:1.5rem}
@@ -85,9 +69,7 @@ nav.nav-on-red .nav-right{color:rgba(255,255,255,.6)}
 .logo-mark{margin-bottom:2rem}
 /* SVG Logo MIRAI */
 .logo-svg-wrap{display:flex;align-items:center;gap:1.25rem;margin-bottom:2.5rem}
-.logo-hex{width:64px;height:64px;flex-shrink:0}
-.logo-img{display:block;object-fit:contain;flex-shrink:0}
-.logo-img.white{filter:brightness(0) invert(1)}
+.logo-hex{width:52px;height:58px;flex-shrink:0;display:block}
 .logo-wordmark{font-size:2.2rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
 .logo-tagline{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;opacity:.35;margin-top:.4rem}
 /* Variations */
@@ -95,12 +77,14 @@ nav.nav-on-red .nav-right{color:rgba(255,255,255,.6)}
 .logo-var-label{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;opacity:.3;margin-bottom:.75rem}
 .logo-var-row{display:flex;gap:1.5rem;align-items:center}
 /* Dark version */
-.logo-var-dark{background:#060203;padding:1.5rem 2rem;border:1px solid rgba(255,255,255,.08);border-radius:4px;display:flex;align-items:center;gap:.875rem;flex:1}
+.logo-var-dark{background:#060203;padding:1.25rem 1.75rem;border:1px solid rgba(255,255,255,.08);border-radius:4px;display:flex;align-items:center;gap:.875rem;flex:1;overflow:hidden}
 /* Light version */
-.logo-var-light{background:#fff;padding:1.5rem 2rem;border-radius:4px;display:flex;align-items:center;gap:.875rem;flex:1}
+.logo-var-light{background:#fff;padding:1.25rem 1.75rem;border-radius:4px;display:flex;align-items:center;gap:.875rem;flex:1;overflow:hidden}
 .logo-var-light .logo-wordmark{color:#060203}
 /* Red version */
-.logo-var-red{background:#c41c1c;padding:1.5rem 2rem;border-radius:4px;display:flex;align-items:center;gap:.875rem;flex:1}
+.logo-var-red{background:#c41c1c;padding:1.25rem 1.75rem;border-radius:4px;display:flex;align-items:center;gap:.875rem;flex:1;overflow:hidden}
+/* Force SVG size inside variation cards */
+.logo-var-dark svg,.logo-var-light svg,.logo-var-red svg{flex-shrink:0;display:block}
 .logo-right{padding-left:4rem}
 .logo-right-title{font-size:clamp(1.5rem,4vw,3rem);font-weight:700;letter-spacing:-.04em;margin-bottom:1.5rem}
 .logo-rule{display:flex;gap:1.25rem;margin-bottom:1.25rem;align-items:flex-start}
@@ -235,16 +219,11 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:
   .color-secondaries{grid-template-columns:1fr 1fr}
   nav{padding:1.25rem 1.5rem}
   .page{padding:7rem 1.5rem 4rem}
-  .nav-logo img{width:18px;height:18px}
-  .cover-logo-text img{width:26px;height:26px}
 }
-
 @media(max-width:600px){
-  .cover-top{gap:1rem;align-items:flex-start;flex-direction:column}
   .cover-title{font-size:4rem}
   .slogan-main{font-size:3.5rem}
 }
-
 </style>
 </head>
 <body>
@@ -253,15 +232,15 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:
 <div class="cring" id="cr"></div>
 <div id="prog"></div>
 
-<nav class="nav-on-dark">
-  <span class="nav-logo">MIRAI<span class="nav-logo-dot">.</span></span>
+<nav>
+  <span class="nav-logo">MIRAI<span style="color:#c41c1c">.</span></span>
   <span class="nav-right">Kaji Labs · Brand Guidelines · 2026</span>
 </nav>
 
 <!-- ══ 00 COVER ══ -->
 <section class="page" id="cover" style="padding:3rem">
   <div class="cover-top">
-    <span class="cover-logo-text"><img src="./mirai-logo-red-site.png" alt="MIRAI logo"><span>MIRAI · 未来</span></span>
+    <span class="cover-logo-text">MIRAI · 未来</span>
     <span class="cover-kanji">Modern Intelligence<br>for Reliable Automation<br>& Integration</span>
   </div>
   <div class="cover-main">
@@ -324,7 +303,25 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:
       <div class="logo-display">
         <!-- Logo principal -->
         <div class="logo-svg-wrap rv">
-          <img class="logo-hex brand-mark-img" src="./mirai-logo-red-site.png" alt="MIRAI logo">
+          <!-- MIRAI M+Arrow SVG logo -->
+          <svg class="logo-hex" viewBox="0 0 100 112" xmlns="http://www.w3.org/2000/svg">
+            <!-- Arrow top -->
+            <polygon points="50,2 37,20 44,20 44,34 56,34 56,20 63,20" fill="#c41c1c"/>
+            <!-- Left outer bar -->
+            <polygon points="10,23 26,23 36,78 20,78" fill="#c41c1c"/>
+            <!-- Right outer bar -->
+            <polygon points="90,23 74,23 64,78 80,78" fill="#c41c1c"/>
+            <!-- Left inner diagonal (darker) -->
+            <polygon points="26,23 44,34 38,78 20,78" fill="#8a0c0e"/>
+            <!-- Right inner diagonal (darker) -->
+            <polygon points="74,23 56,34 62,78 80,78" fill="#8a0c0e"/>
+            <!-- Chevron 1 -->
+            <polygon points="20,78 50,94 80,78 80,87 50,103 20,87" fill="#c41c1c"/>
+            <!-- Chevron 2 (darker) -->
+            <polygon points="28,65 50,80 72,65 72,73 50,88 28,73" fill="#8a0c0e"/>
+            <!-- Chevron 3 (darkest, small) -->
+            <polygon points="36,53 50,66 64,53 64,60 50,73 36,60" fill="#6b0608"/>
+          </svg>
           <div>
             <div class="logo-wordmark">MIRAI</div>
             <div class="logo-tagline">未来 · Built for tomorrow. · by Kaji Labs</div>
@@ -335,24 +332,60 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:
         <div class="logo-var-row rv d2">
           <!-- Dark bg -->
           <div class="logo-var-dark">
-            <img src="./mirai-logo-red-site.png" alt="MIRAI logo on dark">
-            <span style="font-weight:700;font-size:1.1rem;letter-spacing:.18em;color:#fff">MIRAI</span>
+            <svg style="width:28px;height:32px;flex-shrink:0;display:block" viewBox="0 0 100 112">
+              <polygon points="50,2 37,20 44,20 44,34 56,34 56,20 63,20" fill="#c41c1c"/>
+              <polygon points="10,23 26,23 36,78 20,78" fill="#c41c1c"/>
+              <polygon points="90,23 74,23 64,78 80,78" fill="#c41c1c"/>
+              <polygon points="26,23 44,34 38,78 20,78" fill="#8a0c0e"/>
+              <polygon points="74,23 56,34 62,78 80,78" fill="#8a0c0e"/>
+              <polygon points="20,78 50,94 80,78 80,87 50,103 20,87" fill="#c41c1c"/>
+              <polygon points="28,65 50,80 72,65 72,73 50,88 28,73" fill="#8a0c0e"/>
+              <polygon points="36,53 50,66 64,53 64,60 50,73 36,60" fill="#6b0608"/>
+            </svg>
+            <span style="font-weight:700;font-size:1.1rem;letter-spacing:.18em">MIRAI</span>
           </div>
           <!-- Light bg -->
           <div class="logo-var-light">
-            <img src="./mirai-logo-red-site.png" alt="MIRAI logo on light">
+            <svg style="width:28px;height:32px;flex-shrink:0;display:block" viewBox="0 0 100 112">
+              <polygon points="50,2 37,20 44,20 44,34 56,34 56,20 63,20" fill="#c41c1c"/>
+              <polygon points="10,23 26,23 36,78 20,78" fill="#c41c1c"/>
+              <polygon points="90,23 74,23 64,78 80,78" fill="#c41c1c"/>
+              <polygon points="26,23 44,34 38,78 20,78" fill="#8a0c0e"/>
+              <polygon points="74,23 56,34 62,78 80,78" fill="#8a0c0e"/>
+              <polygon points="20,78 50,94 80,78 80,87 50,103 20,87" fill="#c41c1c"/>
+              <polygon points="28,65 50,80 72,65 72,73 50,88 28,73" fill="#8a0c0e"/>
+              <polygon points="36,53 50,66 64,53 64,60 50,73 36,60" fill="#6b0608"/>
+            </svg>
             <span class="logo-wordmark" style="font-size:1.1rem;color:#060203">MIRAI</span>
           </div>
         </div>
         <div class="logo-var-row rv d3">
           <!-- Red bg (mono white) -->
           <div class="logo-var-red">
-            <img src="./mirai-logo-white-site.png" alt="MIRAI logo on red">
+            <svg style="width:28px;height:32px;flex-shrink:0;display:block" viewBox="0 0 100 112">
+              <polygon points="50,2 37,20 44,20 44,34 56,34 56,20 63,20" fill="rgba(255,255,255,0.9)"/>
+              <polygon points="10,23 26,23 36,78 20,78" fill="rgba(255,255,255,0.9)"/>
+              <polygon points="90,23 74,23 64,78 80,78" fill="rgba(255,255,255,0.9)"/>
+              <polygon points="26,23 44,34 38,78 20,78" fill="rgba(255,255,255,0.6)"/>
+              <polygon points="74,23 56,34 62,78 80,78" fill="rgba(255,255,255,0.6)"/>
+              <polygon points="20,78 50,94 80,78 80,87 50,103 20,87" fill="rgba(255,255,255,0.9)"/>
+              <polygon points="28,65 50,80 72,65 72,73 50,88 28,73" fill="rgba(255,255,255,0.6)"/>
+              <polygon points="36,53 50,66 64,53 64,60 50,73 36,60" fill="rgba(255,255,255,0.4)"/>
+            </svg>
             <span style="font-weight:700;font-size:1.1rem;letter-spacing:.18em;color:#fff">MIRAI</span>
           </div>
           <!-- Icon only -->
-          <div class="logo-var-icon">
-            <img src="./mirai-logo-red-site.png" alt="MIRAI icon only">
+          <div style="background:#f5f0f5;padding:1.25rem 2rem;border-radius:4px;display:flex;align-items:center;justify-content:center;flex:0.5;overflow:hidden">
+            <svg style="width:36px;height:40px;flex-shrink:0;display:block" viewBox="0 0 100 112">
+              <polygon points="50,2 37,20 44,20 44,34 56,34 56,20 63,20" fill="#c41c1c"/>
+              <polygon points="10,23 26,23 36,78 20,78" fill="#c41c1c"/>
+              <polygon points="90,23 74,23 64,78 80,78" fill="#c41c1c"/>
+              <polygon points="26,23 44,34 38,78 20,78" fill="#8a0c0e"/>
+              <polygon points="74,23 56,34 62,78 80,78" fill="#8a0c0e"/>
+              <polygon points="20,78 50,94 80,78 80,87 50,103 20,87" fill="#c41c1c"/>
+              <polygon points="28,65 50,80 72,65 72,73 50,88 28,73" fill="#8a0c0e"/>
+              <polygon points="36,53 50,66 64,53 64,60 50,73 36,60" fill="#6b0608"/>
+            </svg>
           </div>
         </div>
       </div>
@@ -381,8 +414,17 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:
         <span class="safe-space-label left">1x</span>
         <span class="safe-space-label right">1x</span>
         <div style="display:flex;align-items:center;gap:.875rem;border:1px dashed rgba(255,255,255,.15);padding:1.25rem 2rem;border-radius:2px">
-          <img src="./mirai-logo-red-site.png" alt="MIRAI clear space example" style="width:26px;height:26px;object-fit:contain;display:block">
-          <span style="font-weight:700;font-size:.9rem;letter-spacing:.18em;color:#fff">MIRAI</span>
+          <svg width="22" height="25" viewBox="0 0 100 112">
+            <polygon points="50,2 37,20 44,20 44,34 56,34 56,20 63,20" fill="#c41c1c"/>
+            <polygon points="10,23 26,23 36,78 20,78" fill="#c41c1c"/>
+            <polygon points="90,23 74,23 64,78 80,78" fill="#c41c1c"/>
+            <polygon points="26,23 44,34 38,78 20,78" fill="#8a0c0e"/>
+            <polygon points="74,23 56,34 62,78 80,78" fill="#8a0c0e"/>
+            <polygon points="20,78 50,94 80,78 80,87 50,103 20,87" fill="#c41c1c"/>
+            <polygon points="28,65 50,80 72,65 72,73 50,88 28,73" fill="#8a0c0e"/>
+            <polygon points="36,53 50,66 64,53 64,60 50,73 36,60" fill="#6b0608"/>
+          </svg>
+          <span style="font-weight:700;font-size:.9rem;letter-spacing:.18em">MIRAI</span>
         </div>
       </div>
     </div>
@@ -709,31 +751,6 @@ const obs=new IntersectionObserver(es=>{
   es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')});
 },{threshold:.07,rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
-
-// NAV THEME
-const nav=document.querySelector('nav');
-const navThemes={
-  'cover':'dark',
-  'intro':'light',
-  'logo-section':'dark',
-  'colors':'light',
-  'typography':'dark',
-  'voice':'light',
-  'ecosystem':'dark',
-  'slogan-section':'red',
-  'contact':'light'
-};
-function setNavTheme(){
-  const probeY=window.scrollY+nav.offsetHeight+24;
-  const sections=[...document.querySelectorAll('section[id]')];
-  const active=sections.find(sec=>probeY>=sec.offsetTop && probeY<sec.offsetTop+sec.offsetHeight);
-  const theme=active ? (navThemes[active.id] || 'dark') : 'dark';
-  nav.classList.remove('nav-on-dark','nav-on-light','nav-on-red');
-  nav.classList.add(`nav-on-${theme}`);
-}
-setNavTheme();
-window.addEventListener('scroll',setNavTheme,{passive:true});
-window.addEventListener('resize',setNavTheme);
 </script>
 </body>
 </html>
